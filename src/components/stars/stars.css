@@ -1,0 +1,4 @@
+.card-body-stars li {
+  display: inline;
+  list-style-type: none;
+}
