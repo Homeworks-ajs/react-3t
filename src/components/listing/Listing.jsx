@@ -1,14 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Card from '../card/Card'
-import {data} from './products'
 
-function Listing() {
+
+function Listing({items}) {
   return (
-    <div class="item-list">
-      {data.map(el => <Card data={el}/>)}
+    <div className="item-list">
+      {items.map(el => <Card data={el} key={el.listing_id}/>)}
     </div>
   )
+}
+
+Listing.defaultProps = {
+  items: []
+}
+
+Listing.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.any)
 }
 
 export default Listing
